@@ -10,7 +10,7 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>	
-    <title>Neil's Weather Website</title>
+    <title>Temperature</title>
 	<style>
 	.gray-body {
 	background-color: #ededed;
@@ -35,11 +35,16 @@
    color: A29A99;
    text-align: center;
 }
-body {
+	body {
    min-height: 400px;
    margin-bottom: 100px;
    clear: both;
 }
+.round1 {
+   border: 4px solid #a9a9a9;
+   background-color:#ff0;
+}
+	
 	</style>
   </head>
   <body class="gray-body">
@@ -50,8 +55,8 @@ body {
 	  </button>
 	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
 		<ul class="navbar-nav">
-		  <li class="nav-item active">
-			<a class="nav-link" href="#">Landing Page<span class="sr-only">(current)</span></a>
+		  <li class="nav-item">
+			<a class="nav-link" href="index.html">Landing Page</a>
 		  </li>
 		  <li class="nav-item">
 			<a class="nav-link" href="compare.html">Comparisons</a>
@@ -60,11 +65,10 @@ body {
 			<a class="nav-link" href="data.html">Data</a>
 		  </li>
 		  <li class="nav-item dropdown">
-			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			  Visualizations
-			</a>
+			<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  Visualizations<span class="sr-only">(current)</span></a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-			  <a class="dropdown-item" href="vis_temp.html">Max Temp</a>
+			  <a class="dropdown-item active" href="#">Max Temp</a>
 			  <a class="dropdown-item" href="vis_humid.html">Humidity</a>
 			  <a class="dropdown-item" href="vis_cloud.html">Cloudiness</a>
 			  <a class="dropdown-item" href="vis_wind.html">Wind Speed</a>
@@ -77,20 +81,20 @@ body {
 	<div class="container white-body ten_pad">
 		<div class="row">
 			<div class="col-12 col-lg-8">
-				<h2>Summary: Latitude vs X</h2>
+				<h2>Latitude vs Temperature</h2>
 				<hr>
-				<img src="weather_graph_exports/Lat_V_Temp.png" class="float-left" width=50%>
-				<p>	The purpose of this project was to prove a well understood concept, that average temperature rises as one approaches the equator.
+				<img src="weather_graph_exports/Lat_V_Temp.png" class="float-left" width=75%>
+				<p><i>The purpose of this project was to prove a well understood concept, that average temperature rises as one approaches the equator.
 				<br>
-				To do this, we pulled real time weather data on ~500 cities through the OpenWeatherMap API, imported the results into Pandas, then used Matplotlib to visual the results.
-				<br>
-				To make our analysis more interesting, we incorporated other factors: cloudiness, wind speed, and humidity.
+				To do this, we pulled real time weather data on ~500 cities through the OpenWeatherMap API, imported the results into Pandas, then used Matplotlib to visual the results.</i>
+				<br><hr>
+				As was expected, clearly the temperature did increase as one approached the equator. What as perhaps the most interesting discovery was that it was slightly skewed toward 20 degrees north. This has to do with the tilt of the earth - it was summer in the northern hemisphere at the time. It was interesting to me to witness such a large swing.
 				</p>
 			</div>
 			<div class="col-12 col-lg-4">
 				<h3>Visualizations</h3>
 				<hr>
-				<a href="vis_temp.html"><img src="weather_graph_exports/Lat_V_Temp.png" class="float-left" width=50%></a>
+				<a href="vis_temp.html"><img src="weather_graph_exports/Lat_V_Temp.png" class="float-left round1" width=48%></a>
 				<a href="vis_cloud.html"><img src="weather_graph_exports/Lat_V_Cloudy.png" class="float-left" width=50%></a>
 				<br>
 				<a href="vis_humid.html"><img src="weather_graph_exports/Lat_V_Humid.png" class="float-left" width=50%></a>
