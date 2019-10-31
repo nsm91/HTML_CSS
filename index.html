@@ -18,10 +18,28 @@
 	.white-body {
 	background-color: #ffffff;
 	}
+	.five_pad {
+	padding-top: 5px;
+	margin-top: 10px;
+	}	
 	.ten_pad {
 	padding-top: 10px;
 	margin-top: 15px;
 	}
+	.footer1 {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #F7F7F7;
+   color: A29A99;
+   text-align: center;
+}
+body {
+   min-height: 400px;
+   margin-bottom: 100px;
+   clear: both;
+}
 	</style>
   </head>
   <body class="gray-body">
@@ -46,10 +64,11 @@
 			  Visualizations
 			</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-			  <a class="dropdown-item" href="#">Figure 1</a>
-			  <a class="dropdown-item" href="#">Figure 2</a>
-			  <a class="dropdown-item" href="#">Figure 3</a>
-			  <a class="dropdown-item" href="#">Figure 4</a>
+			  <a class="dropdown-item" href="#">Max Temp</a>
+			  <a class="dropdown-item" href="#">Humidity</a>
+			  <a class="dropdown-item" href="#">Cloudiness</a>
+			  <a class="dropdown-item" href="#">Wind Speed</a>
+
 			</div>
 		  </li>
 		</ul>
@@ -58,14 +77,32 @@
 	<div class="container white-body ten_pad">
 		<div class="row">
 			<div class="col-12 col-lg-8">
-				<h2>Summary: Latitude VS ?</h2>
+				<h2>Summary: Latitude vs X</h2>
 				<hr>
+				<img src="weather_graph_exports/Lat_V_Temp.png" class="float-left" width=50%>
+				<p>	The purpose of this project was to prove a well understood concept, that average temperature rises as one approaches the equator.
+				<br>
+				To do this, we pulled real time weather data on ~500 cities through the OpenWeatherMap API, imported the results into Pandas, then used Matplotlib to visual the results.
+				<br>
+				To make our analysis more interesting, we incorporated other factors: cloudiness, wind speed, and humidity.
+				</p>
 			</div>
 			<div class="col-12 col-lg-4">
-				<h2>Summary: Latitude VS ?</h2>
+				<h3>Visualizations</h3>
 				<hr>
+				<img src="weather_graph_exports/Lat_V_Temp.png" class="float-left" width=50%>
+				<img src="weather_graph_exports/Lat_V_Cloudy.png" class="float-left" width=50%>
+				<br>
+				<img src="weather_graph_exports/Lat_V_Humid.png" class="float-left" width=50%>
+				<img src="weather_graph_exports/Lat_V_Wind.png" class="float-left" width=50%>
+
 			</div>
 		</div>
 	</div>
   </body>
+	<footer class="footer1">
+      <div class="container five_pad">
+        <p>Created by Neil Mudjer for the NUCHI201908DATA2 cohort.</p>
+      </div>
+    </footer>
 </html>
